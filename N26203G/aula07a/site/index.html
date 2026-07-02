@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLACIER — Garrafa Térmica Ultra-Frescor</title>
+    <meta name="description" content="Descubra a pureza intocada da fonte glacial. A garrafa GLACIER mantém sua água no ponto de congelamento por até 24 horas.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Aurora Background Glows -->
+    <div class="aurora-bg">
+        <div class="aurora-glow aurora-glow-1"></div>
+        <div class="aurora-glow aurora-glow-2"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="#" class="logo">GLA<span>CIER</span></a>
+        <nav>
+            <a href="#descobrir">Descobrir o Local</a>
+            <a href="#detalhes">A Garrafa</a>
+        </nav>
+        <button class="btn-cta">Garantir a Minha</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="tagline">O Frescor Glacial na Sua Mão</span>
+            <h1>Sinta a pureza de uma fonte intocada</h1>
+            <p>
+                Projetada para engenheiros de si mesmos, a GLACIER traz o frescor primitivo das montanhas mais isoladas do planeta direto para sua rotina, mantendo a temperatura impecavelmente gelada.
+            </p>
+            <div class="hero-actions">
+                <a href="#descobrir" class="btn-cta">Explorar a Origem</a>
+                <a href="#detalhes" class="btn-secondary">Ver Tecnologia</a>
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="product-image-wrapper">
+                <img src="garrafa.png" alt="Garrafa GLACIER em frente ao glaciar de origem" id="main-product-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section class="discover-section" id="descobrir">
+        <div class="section-header">
+            <h2>Descubra a Origem do Frescor</h2>
+            <p>Nossa água não é apenas filtrada, ela nasce em um santuário intocado pelo tempo. Clique nos cards abaixo para explorar a localização da fonte.</p>
+        </div>
+
+        <div class="interactive-grid">
+            <div class="info-card" data-source="altitude" style="border-color: var(--accent-cyan);">
+                <div class="card-badge">Origem</div>
+                <div class="card-icon">🏔️</div>
+                <h3>Glaciar Peak</h3>
+                <p>Nascida do degelo natural em altitudes elevadas, longe da civilização.</p>
+            </div>
+
+            <div class="info-card" data-source="filtragem">
+                <div class="card-badge">Processo</div>
+                <div class="card-icon">⚡</div>
+                <h3>Rochas Vulcânicas</h3>
+                <p>Filtragem natural lenta através de basalto que confere minerais únicos.</p>
+            </div>
+
+            <div class="info-card" data-source="sustentavel">
+                <div class="card-badge">Eco</div>
+                <div class="card-icon">🌱</div>
+                <h3>Fluxo Sustentável</h3>
+                <p>Coleta consciente respeitando a vazão natural e o ecossistema local.</p>
+            </div>
+        </div>
+
+        <!-- Dynamic Information Panel -->
+        <div class="source-facts">
+            <div class="facts-content">
+                <h3 id="fact-title">Glaciar de Altitude Extrema</h3>
+                <p id="fact-description">Nossa água é extraída a mais de 3.200 metros de altitude, onde o ar é rarefeito e a pureza é intocada por poluentes urbanos. A altitude garante uma barreira natural contra qualquer interferência externa.</p>
+                
+                <div class="facts-indicator">
+                    <div class="indicator-item">
+                        <div class="indicator-val" id="stat-temp">-4°C</div>
+                        <div class="indicator-lbl">Temp. Média</div>
+                    </div>
+                    <div class="indicator-item">
+                        <div class="indicator-val" id="stat-purity">99.9%</div>
+                        <div class="indicator-lbl">Pureza</div>
+                    </div>
+                    <div class="indicator-item">
+                        <div class="indicator-val" id="stat-alt">3.200m</div>
+                        <div class="indicator-lbl">Altitude</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Features Section -->
+    <section class="specs-section" id="detalhes">
+        <div class="section-header">
+            <h2>Engenharia do Frio</h2>
+            <p>Construída com isolamento a vácuo triplo, protegendo a temperatura ideal não importa o ambiente.</p>
+        </div>
+
+        <div class="specs-container">
+            <div class="specs-list">
+                <div class="spec-item">
+                    <div class="spec-num">1</div>
+                    <div class="spec-details">
+                        <h4>Aço Cirúrgico 18/8</h4>
+                        <p>Totalmente livre de BPA, mantendo o sabor original e puro da água, sem gosto metálico.</p>
+                    </div>
+                </div>
+                
+                <div class="spec-item">
+                    <div class="spec-num">2</div>
+                    <div class="spec-details">
+                        <h4>IceLock Triple-Wall</h4>
+                        <p>Três camadas de isolamento térmico a vácuo com barreira de cobre reflexiva.</p>
+                    </div>
+                </div>
+
+                <div class="spec-item">
+                    <div class="spec-num">3</div>
+                    <div class="spec-details">
+                        <h4>Grip Anti-Condensação</h4>
+                        <p>Textura fosca jateada para segurar com firmeza mesmo com luvas ou mãos úmidas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="specs-visual">
+                <!-- Secondary dynamic preview or visual reinforcement -->
+                <div class="product-image-wrapper" style="max-width: 320px;">
+                    <img src="garrafa.png" alt="Tecnologia da garrafa GLACIER" style="transform: scale(0.9);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="logo">GLA<span>CIER</span></a>
+            <div class="footer-links">
+                <a href="#descobrir">A Fonte</a>
+                <a href="#detalhes">Tecnologia</a>
+                <a href="#">Privacidade</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 GLACIER S/A. Desenvolvido com foco no frescor absoluto.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
