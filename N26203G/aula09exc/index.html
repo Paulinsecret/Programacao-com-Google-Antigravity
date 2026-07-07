@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PetFeliz — Sistema interno de cadastro e internação veterinária.">
+    <title>PetFeliz — Clínica Veterinária</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Radix Colors — pure CSS color tokens (no React needed) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@radix-ui/colors@latest/sky.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@radix-ui/colors@latest/sky-alpha.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@radix-ui/colors@latest/pink.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@radix-ui/colors@latest/pink-alpha.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@radix-ui/colors@latest/sand.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@radix-ui/colors@latest/green.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@radix-ui/colors@latest/amber.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@radix-ui/colors@latest/red.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-layout">
+
+    <!-- Background Layers -->
+    <div class="paw-decorations" id="pawDecorations"></div>
+    <div class="glow-orb blue-orb-1"></div>
+    <div class="glow-orb blue-orb-2"></div>
+    <div class="glow-orb pink-orb-1"></div>
+
+    <!-- ══ HEADER — Solid Baby Blue Banner ══ -->
+    <header class="app-header">
+        <div class="logo-box">
+            <span class="logo-emoji">🐾</span>
+            <div>
+                <div class="logo-title">PetFeliz</div>
+                <div class="header-subtitle">Clínica Veterinária &amp; Internação</div>
+            </div>
+        </div>
+
+        <nav class="tab-nav">
+            <button id="btnTabForm" class="nav-btn active" onclick="switchTab('form')">
+                📝 Cadastro
+            </button>
+            <button id="btnTabDash" class="nav-btn" onclick="switchTab('dash')">
+                📊 Painel de Controle
+            </button>
+        </nav>
+    </header>
+
+    <!-- ══ MAIN BODY — Seamless content area ══ -->
+    <main class="main-content">
+
+        <!-- TAB 1 — REGISTRATION FORM -->
+        <section id="tabForm" class="tab-content active">
+            <div class="form-page fade-in">
+
+                <h1 class="form-page-title">Novo Registro de Pet</h1>
+                <p class="form-page-desc">Preencha os dados abaixo para cadastrar um novo paciente.</p>
+
+                <form id="petForm" onsubmit="submitForm(event)">
+
+                    <!-- Section: Informações do Animal -->
+                    <div class="form-section">
+                        <div class="form-section-title">Informações do Animal</div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="petName">Nome do Pet</label>
+                                <input type="text" id="petName" name="name" placeholder="Ex: Thor" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="petSpecies">Espécie</label>
+                                <select id="petSpecies" name="species" required>
+                                    <option value="" disabled selected>Selecione...</option>
+                                    <option value="cães">🐶 Cão</option>
+                                    <option value="gatos">🐱 Gato</option>
+                                    <option value="aves">🐦 Ave</option>
+                                    <option value="roedores">🐹 Roedor</option>
+                                    <option value="répteis">🦎 Réptil</option>
+                                    <option value="outros">🐾 Outro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="petBreed">Raça</label>
+                                <input type="text" id="petBreed" name="breed" placeholder="Ex: Golden Retriever" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="petAge">Idade</label>
+                                <input type="text" id="petAge" name="age" placeholder="Ex: 2 anos" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="form-divider">
+
+                    <!-- Section: Responsável e Estado Clínico -->
+                    <div class="form-section">
+                        <div class="form-section-title">Responsável &amp; Estado Clínico</div>
+                        <div class="form-grid" style="margin-bottom: 20px;">
+                            <div class="form-group">
+                                <label for="petOwner">Tutor / Responsável</label>
+                                <input type="text" id="petOwner" name="owner" placeholder="Nome completo" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label>Gravidade do Estado</label>
+                            <div class="severity-options">
+                                <label class="severity-radio low">
+                                    <input type="radio" name="severity" value="baixa" required checked>
+                                    <span class="radio-label">🟢 Baixa</span>
+                                </label>
+                                <label class="severity-radio medium">
+                                    <input type="radio" name="severity" value="média">
+                                    <span class="radio-label">🟡 Média</span>
+                                </label>
+                                <label class="severity-radio high">
+                                    <input type="radio" name="severity" value="alta">
+                                    <span class="radio-label">🔴 Alta / Crítica</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <label class="hosp-toggle">
+                            <input type="checkbox" id="petHospitalized" name="is_hospitalized">
+                            <div class="toggle-track">
+                                <div class="toggle-thumb"></div>
+                            </div>
+                            <span class="toggle-label">Necessita Internação? 🏥</span>
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="btn btn-ghost">Limpar</button>
+                        <button type="submit" class="btn btn-pink">Cadastrar Pet</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <!-- TAB 2 — DASHBOARD -->
+        <section id="tabDash" class="tab-content">
+            <div class="dash-page fade-in">
+
+                <h2 class="dash-page-title">Painel de Controle</h2>
+
+                <!-- Stat Cards -->
+                <div class="stats-cards-row">
+                    <div class="stat-card">
+                        <div class="stat-icon">🐾</div>
+                        <div>
+                            <div class="stat-label">Total Registrado</div>
+                            <div id="statTotalCount" class="stat-num">0</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏥</div>
+                        <div>
+                            <div class="stat-label">Internados</div>
+                            <div id="statHospitalizedCount" class="stat-num">0</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div>
+                            <div class="stat-label">Taxa de Internação</div>
+                            <div id="statHospitalizationRate" class="stat-num">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid Panels -->
+                <div class="dashboard-grid">
+
+                    <!-- Severity Bars -->
+                    <div class="panel panel-blue col-span-2">
+                        <h3>📊 Casos por Gravidade</h3>
+                        <div class="progress-bars-container">
+                            <div class="progress-wrapper">
+                                <div class="progress-header">
+                                    <span>🟢 Gravidade Baixa</span>
+                                    <span id="severityLowText">0 pets (0%)</span>
+                                </div>
+                                <div class="progress-outer">
+                                    <div id="severityLowBar" class="progress-inner low-bar" style="width:0%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-wrapper">
+                                <div class="progress-header">
+                                    <span>🟡 Gravidade Média</span>
+                                    <span id="severityMediumText">0 pets (0%)</span>
+                                </div>
+                                <div class="progress-outer">
+                                    <div id="severityMediumBar" class="progress-inner medium-bar" style="width:0%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-wrapper">
+                                <div class="progress-header">
+                                    <span>🔴 Gravidade Alta</span>
+                                    <span id="severityHighText">0 pets (0%)</span>
+                                </div>
+                                <div class="progress-outer">
+                                    <div id="severityHighBar" class="progress-inner high-bar" style="width:0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Breeds -->
+                    <div class="panel panel-pink">
+                        <h3>🐩 Raças Frequentes</h3>
+                        <ul id="topBreedsList" class="dashboard-list">
+                            <li class="empty-list-msg">Nenhum registro encontrado.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Species Count -->
+                    <div class="panel panel-blue">
+                        <h3>🦜 Casos por Espécie</h3>
+                        <ul id="speciesCountList" class="dashboard-list">
+                            <li class="empty-list-msg">Nenhum registro encontrado.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Pets Table -->
+                    <div class="panel panel-pink col-span-3">
+                        <h3>📋 Pets Registrados Recentemente</h3>
+                        <div class="table-scroll">
+                            <table class="pets-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Espécie</th>
+                                        <th>Raça</th>
+                                        <th>Idade</th>
+                                        <th>Tutor</th>
+                                        <th>Gravidade</th>
+                                        <th>Internado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="petsTableBody">
+                                    <tr>
+                                        <td colspan="7" class="empty-table-msg">Ainda não há pets cadastrados.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ══ FOOTER — Taller & Professional ══ -->
+    <footer class="app-footer">
+        <div class="footer-inner">
+
+            <!-- Left: Status indicator -->
+            <div class="footer-status">
+                <span class="status-dot" id="statusDot"></span>
+                <span class="footer-status-text" id="footerStatusText">Sistema Local Conectado (Banco de Dados)</span>
+            </div>
+
+            <!-- Center: Brand -->
+            <div class="footer-brand">🐾 PetFeliz Clínica Veterinária</div>
+
+            <!-- Right: Technical info -->
+            <div class="footer-info">
+                <div class="footer-info-item">🌐 Porta 8000</div>
+                <div class="footer-info-item">💾 SQLite Local</div>
+                <div class="footer-info-item">🔒 Modo Offline</div>
+            </div>
+        </div>
+
+        <div class="footer-subbar">
+            <span class="footer-copy">© 2025 PetFeliz — Sistema de Recepção Interno &nbsp;·&nbsp; Todos os direitos reservados</span>
+        </div>
+    </footer>
+
+    <!-- Toast container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

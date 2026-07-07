@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Perguntas Frequentes sobre os cursos de programação do SENAI. Tire suas dúvidas sobre tecnologia, matrículas e certificações." />
+  <title>FAQ — Cursos de Programação | SENAI</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" role="banner">
+    <div class="header-container">
+
+      <!-- Logotipo / Identidade -->
+      <div class="header-brand">
+        <div class="brand-logo" aria-label="Logo SENAI">
+          <span class="logo-icon" aria-hidden="true">⚙</span>
+          <div class="logo-text">
+            <span class="logo-title">SENAI</span>
+            <span class="logo-sub">Serviço Nacional de Aprendizagem Industrial</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navegação principal -->
+      <nav class="header-nav" aria-label="Navegação principal">
+        <ul class="nav-list" role="list">
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#cursos" class="nav-link">Cursos</a></li>
+          <li><a href="#contato" class="nav-link nav-link--cta">Matricule-se</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- Barra de destaque vermelha decorativa -->
+    <div class="header-accent" aria-hidden="true"></div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="faq" role="main">
+
+    <!-- Hero / Introdução -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-container">
+        <div class="hero-badge">Tecnologia &amp; Inovação</div>
+        <h1 id="hero-title" class="hero-title">
+          Perguntas Frequentes sobre<br />
+          <span class="hero-highlight">Cursos de Programação</span>
+        </h1>
+        <p class="hero-description">
+          Tire suas dúvidas sobre os cursos de tecnologia do SENAI. Encontre
+          respostas sobre conteúdo, duração, certificados e muito mais.
+        </p>
+      </div>
+      <div class="hero-decoration" aria-hidden="true">
+        <span>{ }</span>
+        <span>&lt;/&gt;</span>
+        <span>01</span>
+      </div>
+    </section>
+
+    <!-- =================== SEÇÃO FAQ =================== -->
+    <section class="faq-section" aria-labelledby="faq-section-title">
+      <div class="faq-container">
+
+        <h2 id="faq-section-title" class="faq-section-title">
+          Encontre Sua Resposta
+        </h2>
+
+        <!-- -------- FAQ ITEM 1 -------- -->
+        <article class="faq-card" id="faq-1">
+
+          <!-- Botão clicável: exibe a pergunta e controla o acordeão -->
+          <button
+            class="faq-card__toggle"
+            id="faq-btn-1"
+            aria-expanded="false"
+            aria-controls="faq-body-1">
+            <div class="faq-card__toggle-left">
+              <div class="faq-card__number" aria-hidden="true">01</div>
+              <h3 class="faq-card__question">
+                Quais linguagens de programação são ensinadas nos cursos do SENAI?
+              </h3>
+            </div>
+            <span class="faq-card__chevron" aria-hidden="true">&#8964;</span>
+          </button>
+
+          <!-- Corpo recolhível: resposta + feedback -->
+          <div class="faq-card__body" id="faq-body-1" role="region" aria-labelledby="faq-btn-1">
+            <div class="faq-card__body-inner">
+              <p class="faq-card__answer">
+                O SENAI oferece cursos que abrangem as principais linguagens do mercado.
+                Dependendo do curso escolhido, você aprenderá <strong>HTML, CSS e JavaScript</strong>
+                para desenvolvimento web, <strong>Python</strong> para ciência de dados e automação,
+                <strong>Java</strong> para desenvolvimento corporativo, além de <strong>SQL</strong>
+                para banco de dados. Os cursos são estruturados para ensinar tanto os fundamentos
+                quanto as aplicações práticas, preparando você para as demandas reais do setor
+                industrial e de serviços.
+              </p>
+
+              <div class="faq-card__feedback" aria-label="Avalie esta resposta">
+                <span class="feedback-label">Esta resposta foi útil?</span>
+                <div class="feedback-actions">
+                  <button
+                    class="btn-feedback btn-feedback--like"
+                    id="like-1"
+                    data-faq="1"
+                    data-action="like"
+                    aria-label="Curtir resposta 1"
+                    title="Curtir">
+                    <span class="btn-feedback__icon" aria-hidden="true">👍</span>
+                    <span class="btn-feedback__count" aria-live="polite">0</span>
+                  </button>
+                  <button
+                    class="btn-feedback btn-feedback--dislike"
+                    id="dislike-1"
+                    data-faq="1"
+                    data-action="dislike"
+                    aria-label="Descurtir resposta 1"
+                    title="Descurtir">
+                    <span class="btn-feedback__icon" aria-hidden="true">👎</span>
+                    <span class="btn-feedback__count" aria-live="polite">0</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- -------- FAQ ITEM 2 -------- -->
+        <article class="faq-card" id="faq-2">
+
+          <button
+            class="faq-card__toggle"
+            id="faq-btn-2"
+            aria-expanded="false"
+            aria-controls="faq-body-2">
+            <div class="faq-card__toggle-left">
+              <div class="faq-card__number" aria-hidden="true">02</div>
+              <h3 class="faq-card__question">
+                Os cursos de programação do SENAI emitem certificado reconhecido pelo mercado?
+              </h3>
+            </div>
+            <span class="faq-card__chevron" aria-hidden="true">&#8964;</span>
+          </button>
+
+          <div class="faq-card__body" id="faq-body-2" role="region" aria-labelledby="faq-btn-2">
+            <div class="faq-card__body-inner">
+              <p class="faq-card__answer">
+                Sim! Todos os cursos do SENAI emitem <strong>certificado de qualificação
+                profissional</strong>, amplamente reconhecido pelo mercado de trabalho em todo
+                o Brasil. Os cursos técnicos, por serem regulamentados pelo <strong>MEC
+                (Ministério da Educação)</strong>, emitem diplomas de nível técnico com validade
+                nacional. Além disso, o SENAI possui convênios com empresas parceiras que
+                frequentemente recrutam diretamente de sua base de alunos, o que aumenta
+                significativamente as chances de inserção no mercado após a conclusão do curso.
+              </p>
+
+              <div class="faq-card__feedback" aria-label="Avalie esta resposta">
+                <span class="feedback-label">Esta resposta foi útil?</span>
+                <div class="feedback-actions">
+                  <button
+                    class="btn-feedback btn-feedback--like"
+                    id="like-2"
+                    data-faq="2"
+                    data-action="like"
+                    aria-label="Curtir resposta 2"
+                    title="Curtir">
+                    <span class="btn-feedback__icon" aria-hidden="true">👍</span>
+                    <span class="btn-feedback__count" aria-live="polite">0</span>
+                  </button>
+                  <button
+                    class="btn-feedback btn-feedback--dislike"
+                    id="dislike-2"
+                    data-faq="2"
+                    data-action="dislike"
+                    aria-label="Descurtir resposta 2"
+                    title="Descurtir">
+                    <span class="btn-feedback__icon" aria-hidden="true">👎</span>
+                    <span class="btn-feedback__count" aria-live="polite">0</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- -------- FAQ ITEM 3 -------- -->
+        <article class="faq-card" id="faq-3">
+
+          <button
+            class="faq-card__toggle"
+            id="faq-btn-3"
+            aria-expanded="false"
+            aria-controls="faq-body-3">
+            <div class="faq-card__toggle-left">
+              <div class="faq-card__number" aria-hidden="true">03</div>
+              <h3 class="faq-card__question">
+                Preciso ter conhecimento prévio em informática para ingressar nos cursos de programação?
+              </h3>
+            </div>
+            <span class="faq-card__chevron" aria-hidden="true">&#8964;</span>
+          </button>
+
+          <div class="faq-card__body" id="faq-body-3" role="region" aria-labelledby="faq-btn-3">
+            <div class="faq-card__body-inner">
+              <p class="faq-card__answer">
+                Não é obrigatório ter experiência anterior em programação para a maioria dos
+                cursos introdutórios do SENAI. Os cursos de <strong>nível básico</strong>, como
+                "Introdução à Programação" e "Desenvolvimento Web", foram criados para quem está
+                começando do zero e ensinam desde o funcionamento básico de um computador até
+                a lógica de programação. Para cursos <strong>técnicos ou de especialização</strong>,
+                pode ser exigido o ensino médio completo ou algum conhecimento específico. É
+                recomendado verificar os pré-requisitos de cada curso diretamente no site
+                oficial ou em uma unidade SENAI próxima a você.
+              </p>
+
+              <div class="faq-card__feedback" aria-label="Avalie esta resposta">
+                <span class="feedback-label">Esta resposta foi útil?</span>
+                <div class="feedback-actions">
+                  <button
+                    class="btn-feedback btn-feedback--like"
+                    id="like-3"
+                    data-faq="3"
+                    data-action="like"
+                    aria-label="Curtir resposta 3"
+                    title="Curtir">
+                    <span class="btn-feedback__icon" aria-hidden="true">👍</span>
+                    <span class="btn-feedback__count" aria-live="polite">0</span>
+                  </button>
+                  <button
+                    class="btn-feedback btn-feedback--dislike"
+                    id="dislike-3"
+                    data-faq="3"
+                    data-action="dislike"
+                    aria-label="Descurtir resposta 3"
+                    title="Descurtir">
+                    <span class="btn-feedback__icon" aria-hidden="true">👎</span>
+                    <span class="btn-feedback__count" aria-live="polite">0</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </article>
+
+      </div><!-- /.faq-container -->
+    </section>
+
+    <!-- Chamada para ação -->
+    <section class="cta-section" id="cursos" aria-labelledby="cta-title">
+      <div class="cta-container">
+        <h2 id="cta-title" class="cta-title">Ainda tem dúvidas?</h2>
+        <p class="cta-description">
+          Entre em contato com uma unidade SENAI próxima a você e descubra o curso
+          ideal para impulsionar sua carreira em tecnologia.
+        </p>
+        <a href="#contato" class="btn-primary" id="cta-btn">Fale com o SENAI</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer" id="contato" role="contentinfo">
+    <div class="footer-container">
+
+      <!-- Coluna: Identidade -->
+      <div class="footer-col footer-col--brand">
+        <div class="footer-brand">
+          <span class="logo-icon" aria-hidden="true">⚙</span>
+          <span class="logo-title">SENAI</span>
+        </div>
+        <p class="footer-brand-desc">
+          Formando profissionais qualificados para a indústria e o futuro da tecnologia brasileira.
+        </p>
+      </div>
+
+      <!-- Coluna: Cursos -->
+      <div class="footer-col">
+        <h3 class="footer-col__title">Cursos de TI</h3>
+        <ul class="footer-list" role="list">
+          <li><a href="#" class="footer-link">Desenvolvimento Web</a></li>
+          <li><a href="#" class="footer-link">Ciência de Dados</a></li>
+          <li><a href="#" class="footer-link">Segurança da Informação</a></li>
+          <li><a href="#" class="footer-link">Redes de Computadores</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna: Links úteis -->
+      <div class="footer-col">
+        <h3 class="footer-col__title">Links Úteis</h3>
+        <ul class="footer-list" role="list">
+          <li><a href="https://www.senai.br" class="footer-link" target="_blank" rel="noopener noreferrer">Portal SENAI</a></li>
+          <li><a href="#faq" class="footer-link">Perguntas Frequentes</a></li>
+          <li><a href="#" class="footer-link">Política de Privacidade</a></li>
+          <li><a href="#" class="footer-link">Acessibilidade</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Linha de Copyright -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        &copy; <span id="footer-year"></span> SENAI — Serviço Nacional de Aprendizagem Industrial.
+        Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="faq.js"></script>
+</body>
+
+</html>

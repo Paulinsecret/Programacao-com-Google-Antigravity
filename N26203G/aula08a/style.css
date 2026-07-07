@@ -1,0 +1,324 @@
+/* Custom properties for theme colors */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --card-border: rgba(255, 255, 255, 0.08);
+    /* Brand Identity Colors */
+    --royal-purple: #7851a9;
+    --royal-purple-light: #9e7cd8;
+    --royal-purple-dark: #583389;
+    --mcqueen-red: #e62222;
+    --mcqueen-red-light: #ff5252;
+    --mcqueen-red-dark: #b81414;
+    --brand-blue: #6495ED;
+    --brand-blue-light: #7ab8ff;
+    --brand-blue-dark: #3a7abf;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-color: linear-gradient(135deg, var(--mcqueen-red) 0%, var(--royal-purple) 100%);
+    --accent-hover: linear-gradient(135deg, var(--mcqueen-red-light) 0%, var(--royal-purple-light) 100%);
+
+    --input-bg: rgba(15, 23, 42, 0.6);
+    --input-border: rgba(255, 255, 255, 0.1);
+        --input-focus-border: var(--brand-blue);
+    --input-focus-ring: rgba(100,149,237,0.25);
+    --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Main Container - centering and glassmorphism card */
+.form-container {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Heading styles */
+#form-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--royal-purple-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.form-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Input groups for spacing and styling */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+/* Accessible Labels */
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+/* Inputs and Textareas styling */
+.input-group input,
+.input-group textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-primary);
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+    .input-group input::placeholder,
+    .input-group textarea::placeholder {
+        color: rgba(180, 170, 208, 0.6);
+    }
+
+
+/* Input states for accessibility */
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 4px var(--input-focus-ring);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+/* Change label color when corresponding field is focused */
+.input-group:focus-within label {
+    color: var(--brand-blue);
+}
+
+/* Submit Button + Botões primários (Confirmar, Enviar Novos Dados) */
+button[type="submit"],
+#btn-confirmar,
+#btn-novo-envio {
+    display: block;
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--mcqueen-red) 0%, var(--royal-purple) 50%, var(--brand-blue) 100%);
+    background-size: 200% 200%;
+    background-position: left center;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    transition: background-position 0.4s ease,
+                transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(230, 34, 34, 0.3),
+                0 4px 15px rgba(120, 81, 169, 0.2),
+                0 4px 15px rgba(100, 149, 237, 0.15);
+}
+
+button[type="submit"]:hover,
+#btn-confirmar:hover,
+#btn-novo-envio:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(230, 34, 34, 0.45),
+                0 8px 24px rgba(158, 124, 216, 0.35),
+                0 8px 24px rgba(100, 149, 237, 0.4);
+}
+
+button[type="submit"]:active,
+#btn-confirmar:active,
+#btn-novo-envio:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(230, 34, 34, 0.2),
+                0 2px 8px rgba(120, 81, 169, 0.15);
+}
+
+button[type="submit"]:focus-visible,
+#btn-confirmar:focus-visible,
+#btn-novo-envio:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
+}
+
+/* Subtly resize textareas */
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .form-container {
+        width: 90%;
+        padding: 24px;
+    }
+    }
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+    }
+}
+
+/* ── Utilitário: ocultar telas ────────────────────────────── */
+.hidden {
+    display: none !important;
+}
+
+/* ── Tela de Revisão: card de dados ──────────────────────── */
+.review-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--royal-purple-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.review-card {
+    background: rgba(15, 8, 25, 0.55);
+    border: 1px solid rgba(120, 81, 169, 0.25);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.review-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.review-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--brand-blue);
+}
+
+.review-value {
+    font-size: 1rem;
+    color: var(--text-primary);
+    word-break: break-word;
+    line-height: 1.5;
+}
+
+/* ── Dois botões lado a lado na tela de revisão ─────────── */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Botão secundário (Voltar) */
+.btn-secondary {
+    display: block;
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: transparent;
+    border: 2px solid rgba(120, 81, 169, 0.5);
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+    border-color: var(--royal-purple-light);
+    color: var(--royal-purple-light);
+    background: rgba(120, 81, 169, 0.08);
+    transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+    transform: translateY(1px);
+}
+
+/* ── Tela de Sucesso ──────────────────────────────────────── */
+.success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--mcqueen-red) 0%, var(--royal-purple) 100%);
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0 auto 24px auto;
+    box-shadow: 0 0 30px rgba(120, 81, 169, 0.5);
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--mcqueen-red) 30%, var(--royal-purple-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+}

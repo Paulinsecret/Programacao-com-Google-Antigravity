@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <!-- Google Fonts for Outfit modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════
+         TELA 1: Formulário de Contato
+    ══════════════════════════════════════ -->
+    <main class="form-container" id="tela-formulario">
+        <form id="form-contato" aria-labelledby="form-title" novalidate>
+            <h1 id="form-title">Formulário de Contato</h1>
+            <p class="form-subtitle">Preencha os campos abaixo para entrar em contato conosco.</p>
+
+            <div class="input-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" autocomplete="name" required placeholder="Seu nome completo">
+            </div>
+
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" autocomplete="email" required placeholder="seu.email@exemplo.com">
+            </div>
+
+            <div class="input-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Como podemos ajudar você?"></textarea>
+            </div>
+
+            <button type="submit" id="btn-enviar">Revisar Dados</button>
+        </form>
+    </main>
+
+    <!-- ══════════════════════════════════════
+         TELA 2: Revisão dos Dados
+    ══════════════════════════════════════ -->
+    <main class="form-container hidden" id="tela-revisao">
+        <h1 class="review-title">Revise seus Dados</h1>
+        <p class="form-subtitle">Confirme as informações antes de enviar.</p>
+
+        <div class="review-card">
+            <div class="review-item">
+                <span class="review-label">Nome</span>
+                <span class="review-value" id="rev-nome"></span>
+            </div>
+            <div class="review-item">
+                <span class="review-label">E-mail</span>
+                <span class="review-value" id="rev-email"></span>
+            </div>
+            <div class="review-item">
+                <span class="review-label">Mensagem</span>
+                <span class="review-value" id="rev-mensagem"></span>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button type="button" id="btn-confirmar">✔ Confirmar e Enviar</button>
+            <button type="button" id="btn-voltar-form" class="btn-secondary">← Voltar ao Formulário</button>
+        </div>
+    </main>
+
+    <!-- ══════════════════════════════════════
+         TELA 3: Confirmação de Envio
+    ══════════════════════════════════════ -->
+    <main class="form-container hidden" id="tela-sucesso">
+        <div class="success-icon">✔</div>
+        <h1 class="success-title">Dados Enviados!</h1>
+        <p class="form-subtitle">Sua mensagem foi enviada com sucesso.<br>Entraremos em contato em breve.</p>
+
+        <button type="button" id="btn-novo-envio">+ Enviar Novos Dados</button>
+    </main>
+
+    <!-- Link para o arquivo JavaScript -->
+    <script src="formulario.js"></script>
+</body>
+</html>
